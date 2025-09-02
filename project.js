@@ -112,4 +112,3 @@ for (let callBtn of callButtons) {
 clearHistoryBtn.addEventListener('click', function() {
   callHistory.innerHTML = '';
 });
-hjhj
