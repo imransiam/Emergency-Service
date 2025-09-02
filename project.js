@@ -1,26 +1,25 @@
-// <!-- JavaScript: Full functionality -->
-  
-    // --- State ---
+
+// --- Initial vallus---------------------------------------------
     let heartCount = 0;
-    let coins = 100;  // starting balance as requested
+    let coins = 100; 
     let copyCount = 0;
 
-    // --- Navbar elements ---
+    // --- Navbar elements ---------------------------------------
     const heartCounter = document.getElementById('heartCounter');
     const coinCounter = document.getElementById('coinCounter');
     const copyCounter = document.getElementById('copyCounter');
 
-    // --- Call history elements ---
+    // --- Call history elements ----------------------------------
     const callHistory = document.getElementById('callHistory');
     const clearHistoryBtn = document.getElementById('clearHistoryBtn');
 
-    // --- Utility: current local time ---
+    // --- Utility: current local time -------------------------------
     function getCurrentTime() {
       const now = new Date();
       return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     }
 
-    // --- Hearts: increment navbar count on any card heart click ---
+    // --- Hearts: increment navbar count on any card heart click ---------------------------------
     document.querySelectorAll('.heart-btn').forEach(icon => {
       icon.addEventListener('click', () => {
         heartCount++;
@@ -29,7 +28,7 @@
       });
     });
 
-    // --- Copy buttons: copy number + alert + increment copy count ---
+    // --- Copy buttons: copy number + alert + increment copy count --------------------------------
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const number = btn.dataset.number;
@@ -44,7 +43,7 @@
       });
     });
 
-    // --- Call buttons: coin deduction, alert, add to call history with time ---
+    // --- Call buttons: coin deduction, alert, add to call history with time ------------------------------
     document.querySelectorAll('.call-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const service = btn.dataset.service || 'Service';
@@ -76,7 +75,7 @@
       });
     });
 
-    // --- Clear history ---
+    // --- Clear history ---------------------------------------------------------------------------------------------
     clearHistoryBtn.addEventListener('click', () => {
       callHistory.innerHTML = '';
     });
